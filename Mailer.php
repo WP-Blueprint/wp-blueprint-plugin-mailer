@@ -34,10 +34,14 @@ class Mailer {
 	 */
 	public function create_settings_page() {
 		if ( null !== get_page_by_path( 'wpblueprint_plugins_settings' ) ) {
-			add_submenu_page( 'wpblueprint_plugins_settings', 'Mailer', 'Mailer', 'manage_options', 'my_theme_mailer', array( $this, 'render_mailer_settings' ) );
+			// Commented until multiple plugins exists where these can be handled.
+			//add_submenu_page( 'wpblueprint_plugins_settings', 'Mailer', 'Mailer', 'manage_options', 'my_theme_mailer', array( $this, 'render_mailer_settings' ) );
+			add_menu_page('SMTP Mailer', 'SMTP Mailer', 'manage_options', 'my_theme_mailer', array( $this, 'render_mailer_settings' ) );
 		} else {
-			add_menu_page( 'WP Blueprint Plugins', 'WP Blueprint Plugins', 'manage_options', 'wpblueprint_plugins_settings', array( $this, 'render_wpblueprint_plugins_settings' ), 'dashicons-admin-generic' );
-			add_submenu_page( 'wpblueprint_plugins_settings', 'Mailer', 'Mailer', 'manage_options', 'my_theme_mailer', array( $this, 'render_mailer_settings' ) );
+			// Commented until multiple plugins exists where these can be handled.
+			// add_menu_page( 'WP Blueprint Plugins', 'WP Blueprint Plugins', 'manage_options', 'wpblueprint_plugins_settings', array( $this, 'render_wpblueprint_plugins_settings' ), 'dashicons-admin-generic' );
+			//add_submenu_page( 'wpblueprint_plugins_settings', 'Mailer', 'Mailer', 'manage_options', 'my_theme_mailer', array( $this, 'render_mailer_settings' ) );
+			add_menu_page('SMTP Mailer', 'SMTP Mailer', 'manage_options', 'my_theme_mailer', array( $this, 'render_mailer_settings' ) );
 		}
 	}
 
